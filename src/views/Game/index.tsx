@@ -79,7 +79,6 @@ const Game: React.FC = () => {
     return <Error textError="No game data" />
   }
   const maxLevelHolder = Math.min(rewards.length, gameData.length)
-  console.log(rewards.length, gameData.length)
   dispatch(setMaxLevel(maxLevelHolder - 1))
   const onShowMenu = () => {
     setMobileMenuShow(!mobileMenuShow)

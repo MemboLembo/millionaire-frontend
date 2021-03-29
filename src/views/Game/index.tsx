@@ -15,9 +15,7 @@ const API_HOST = process.env.REACT_APP_API_HOST_NAME
 
 const fetchGameData = async (): Promise<ApiResponse> => {
   try {
-    const res = await fetch(
-      `${API_HOST}/api/questions`
-    )
+    const res = await fetch(`${API_HOST}/api/questions`)
     const { success, data, error } = await res.json()
     if (!success || error) {
       return Promise.reject(error)

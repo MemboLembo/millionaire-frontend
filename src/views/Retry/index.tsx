@@ -12,7 +12,7 @@ const Retry: React.FC = () => {
     if (gameStatus !== 'retrying') {
       history.push('/')
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return (
     <RetryWithStyles>

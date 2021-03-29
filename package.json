@@ -28,11 +28,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "CI=true react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint ./src/**/* --ext .ts,.tsx --quiet --fix --no-error-on-unmatched-pattern",
+    "prettier": "prettier --config .prettierrc './src/**/*.(ts|tsx)' --write"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test"
+      "pre-commit": "yarn lint && yarn prettier",
+      "pre-push": "yarn test"
     }
   },
   "eslintConfig": {

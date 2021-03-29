@@ -42,7 +42,7 @@ const Styles = styled.button`
       stroke: ${THEME.COLORS.accentColor};
     }
   }
-  
+
   @media only screen and (min-width: ${THEME.BREACKPOINTS.tablet}) {
     width: 50%;
     height: 56px;

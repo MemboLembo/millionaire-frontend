@@ -26,7 +26,7 @@ const Style = styled.section`
       display: none;
     }
     .menu {
-      display: block;
+      display: flex;
       width: 25%;
       right: 0;
       background-color: ${THEME.COLORS.lightColor};

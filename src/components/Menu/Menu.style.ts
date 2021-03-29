@@ -2,6 +2,9 @@ import styled from 'styled-components'
 import THEME from 'assets/theme'
 
 const Style = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -10,12 +13,11 @@ const Style = styled.section`
   ul {
     display: flex;
     flex-direction: column-reverse;
-    list-style: none;
     align-items: center;
-    padding-top: 64px;
-    padding-bottom: 32px;
+    width: 100%;
+    list-style: none;
     margin: 0;
-    padding: 64px 0 32px 0;
+    padding: 0;
     li {
       width: 100%;
       height: 32px;

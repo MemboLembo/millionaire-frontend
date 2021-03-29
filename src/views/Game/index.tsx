@@ -57,6 +57,7 @@ const Game: React.FC = () => {
     if (gameStatus !== 'playing') {
       history.push('/')
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   useEffect(() => {
     if (apiResponse && apiResponse.length) {

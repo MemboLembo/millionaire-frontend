@@ -8,6 +8,7 @@ export interface AnswerButtonProps {
   symbol: string
   answer: Answer
   onClick: (answer: Answer, symbol: string) => void
+  isDisabled: boolean
   border?: string
   background?: string
 }
@@ -16,6 +17,7 @@ const AnswerButton: React.FC<AnswerButtonProps> = ({
   symbol,
   answer,
   onClick,
+  isDisabled,
   border = THEME.COLORS.inactiveColor,
   background = THEME.COLORS.lightColor,
 }) => {
@@ -24,7 +26,7 @@ const AnswerButton: React.FC<AnswerButtonProps> = ({
   }
 
   return (
-    <AnswerButtonWithStyles onClick={onAnswerButtonClick}>
+    <AnswerButtonWithStyles onClick={onAnswerButtonClick} disabled={isDisabled}>
       <div className="text-wrapper">
         <span className="symbol">{symbol}</span>
         <span className="text">{answer.label}</span>

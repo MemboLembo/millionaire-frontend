@@ -39,15 +39,18 @@ const answeredColorsMap: Record<string, AnsweredColorsMapValue> = {
 
 const PlayZone: React.FC<PlayzoneProps> = ({ answers, question }) => {
   const [isAnswered, setIsAnswered] = useState(false)
+  const [isBtnDisabled, setIsBtnDisabled] = useState(false)
   const [choosenAnswerSymbol, setChoosenAnswerSymbol] = useState('')
   const { currentLevel, maxLevel } = useSelector(gameSelector)
   const history = useHistory()
   useEffect(() => {
     setIsAnswered(false)
     setChoosenAnswerSymbol('')
+    setIsBtnDisabled(false)
   }, [currentLevel])
   const dispatch = useDispatch()
   const onAnswerButtonClick = (choosenAnswer: Answer, symbol: string) => {
+    setIsBtnDisabled(true)
     setChoosenAnswerSymbol(symbol)
     setTimeout(() => {
       setIsAnswered(true)
@@ -90,6 +93,7 @@ const PlayZone: React.FC<PlayzoneProps> = ({ answers, question }) => {
             <AnswerButton
               key={`${symbol}-variant`}
               onClick={onAnswerButtonClick}
+              isDisabled={isBtnDisabled}
               answer={answer}
               symbol={symbol}
               {...additionalProps}

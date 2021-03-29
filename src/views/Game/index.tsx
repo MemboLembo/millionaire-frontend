@@ -11,11 +11,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import Spinner from 'components/Spinner'
 import Error from 'components/Error'
+const API_HOST = process.env.REACT_APP_API_HOST_NAME
 
 const fetchGameData = async (): Promise<ApiResponse> => {
   try {
     const res = await fetch(
-      'https://millionaire-api.herokuapp.com/api/questions'
+      `${API_HOST}/api/questions`
     )
     const { success, data, error } = await res.json()
     if (!success || error) {
@@ -28,7 +29,7 @@ const fetchGameData = async (): Promise<ApiResponse> => {
 }
 const fetchRewards = async (): Promise<number[]> => {
   try {
-    const res = await fetch('https://millionaire-api.herokuapp.com/api/rewards')
+    const res = await fetch(`${API_HOST}/api/rewards`)
     const { success, data, error } = await res.json()
     if (!success || error) {
       return Promise.reject(error)

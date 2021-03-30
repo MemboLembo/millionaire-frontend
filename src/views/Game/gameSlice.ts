@@ -52,7 +52,7 @@ export const gameSlice = createSlice({
     },
     clearReward: (state) => {
       state.currentReward = 0
-    }
+    },
   },
 })
 
@@ -65,7 +65,7 @@ export const {
   setGameStatus,
   setCurrentReward,
   clearState,
-  clearReward
+  clearReward,
 } = gameSlice.actions
 
 export const gameSelector = (state: RootState) => state.game

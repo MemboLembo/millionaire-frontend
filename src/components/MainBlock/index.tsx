@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import { setGameStatus } from 'views/Game/gameSlice'
+import { clearReward, setGameStatus } from 'views/Game/gameSlice'
 import MainBlockWithStyle from './MainBlock.style'
 import { ReactComponent as HandImg } from '../../assets/img/hand.svg'
 import CtaButton from 'components/CtaButton'
@@ -29,6 +29,7 @@ const MainBlock: React.FC<MainBlockProps> = ({
         <CtaButton
           text={buttonText}
           onClick={() => {
+            dispatch(clearReward())
             dispatch(setGameStatus('playing'))
             history.push('/game')
           }}
